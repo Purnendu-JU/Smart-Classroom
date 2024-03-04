@@ -8,7 +8,7 @@ import SignUp from './Signup.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   
-  <Landing />  
+  <Login />  
      
   </React.StrictMode>,
 )
