@@ -22,7 +22,6 @@ function Landing() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Smart Classroom
             </Typography>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
         <Grid container spacing={3}>
