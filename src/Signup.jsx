@@ -119,7 +119,7 @@ export default function SignUp() {
               <Grid item xs={12}>
               <FormControlLabel
   control={<Checkbox value="allowExtraEmails" color="primary" />}
-  label="Puronengtu is my crush"
+  label="Ready to start learning"
 />
 
               </Grid>
