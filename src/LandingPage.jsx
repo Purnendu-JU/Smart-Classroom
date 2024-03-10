@@ -1,88 +1,29 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './components/Navbar';
-
+import SwipeableTemporaryDrawer from './components/Sidebar';
+import Assignment  from './components/Assignment';
+import Attendance from  './components/Attendance'
+import Chatbot from './components/Chatbot';
+import Community from './components/Community';
+import QuizSection from './components/Quiz';
+import Home from './components/Home';
+ 
 const theme = createTheme();
 
 export default 
 function Landing() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ flexGrow: 1 }}>
         <Navbar/>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="h5" component="h2">
-                Attendance
-              </Typography>
-              <Link href="#" variant="body1">
-                Take Attendance
-              </Link>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="h5" component="h2">
-                Assignments/Study Materials
-              </Typography>
-              <Link href="#" variant="body1">
-                View Assignments
-              </Link>
-              <Link href="#" variant="body1">
-                Add Study Materials
-              </Link>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="h5" component="h2">
-                Polls
-              </Typography>
-              <Link href="#" variant="body1">
-                Create Poll
-              </Link>
-              <Link href="#" variant="body1">
-                View Poll Results
-              </Link>
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="h5" component="h2">
-                Posts
-              </Typography>
-              <Link href="#" variant="body1">
-                Create Post
-              </Link>
-              <Link href="#" variant="body1">
-                View Posts
-              </Link>
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="h5" component="h2">
-                Community
-              </Typography>
-              <Link href="#" variant="body1">
-                Join Community
-              </Link>
-              <Link href="#" variant="body1">
-                View Community
-              </Link>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Box>
+        <SwipeableTemporaryDrawer/>
+        <Home/>
+        {/* <Attendance/>
+        <Assignment/>
+        <Community/>
+        <QuizSection/> */}
+        <Chatbot/>
+        
     </ThemeProvider>
   );
 }
