@@ -15,13 +15,14 @@ import SchoolIcon from '@mui/icons-material/School';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import QuizIcon from '@mui/icons-material/Quiz';
+import ForumIcon from '@mui/icons-material/Forum';
+import { Avatar } from '@mui/material';
 
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({
-    top: false,
+    
     left: false,
-    bottom: false,
-    right: false,
+    
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -52,6 +53,8 @@ export default function SwipeableTemporaryDrawer() {
         return <EventAvailableIcon />;
       case 6:
         return <QuizIcon />;
+      case 7:
+        return <ForumIcon />;
       default:
         return null;
     }
@@ -64,6 +67,19 @@ export default function SwipeableTemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <List>
+        {['Smart Classroom'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+            <ListItemIcon>
+              <Avatar alt="Smart Classroom" src="./src/photos/sclogo.png" sx={{ width: 30, height: 30 }} />
+            </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
       <List>
         {['Home', 'Calendar'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -78,11 +94,11 @@ export default function SwipeableTemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {['Enrolled', 'To-Do','Assignments','Attendance','Quiz'].map((text, index) => (
+        {['Enrolled', 'To-Do','Assignments','Attendance','Quiz','Community'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-              {getIcon(index)}
+              {getIcon(index+2)}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
