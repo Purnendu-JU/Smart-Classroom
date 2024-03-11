@@ -17,6 +17,7 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import QuizIcon from '@mui/icons-material/Quiz';
 import ForumIcon from '@mui/icons-material/Forum';
 import { Avatar } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -40,21 +41,12 @@ export default function SwipeableTemporaryDrawer() {
   const getIcon = (index) => {
     switch (index) {
       case 0:
-        return <HomeIcon />;
-      case 1:
         return <EventIcon />;
-      case 2:
+      case 1:
         return <SchoolIcon />;
-      case 3:
-        return <MailIcon />;
-      case 4:
-        return <AssignmentIcon />;
-      case 5:
-        return <EventAvailableIcon />;
-      case 6:
-        return <QuizIcon />;
-      case 7:
-        return <ForumIcon />;
+      case 2:
+        return <LogoutIcon />;
+      
       default:
         return null;
     }
@@ -72,7 +64,7 @@ export default function SwipeableTemporaryDrawer() {
           <ListItem key={text} disablePadding>
             <ListItemButton>
             <ListItemIcon>
-              <Avatar alt="Smart Classroom" src="./src/photos/sclogo.png" sx={{ width: 30, height: 30 }} />
+              <Avatar alt="Smart Classroom" src="./src/photos/sclogo.png" sx={{ width: 40, height: 40 }} />
             </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -81,11 +73,11 @@ export default function SwipeableTemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {['Home', 'Calendar'].map((text, index) => (
+        {['Calendar'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index === 0 ? <HomeIcon /> : <EventIcon />}
+              {getIcon(index)}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -94,11 +86,11 @@ export default function SwipeableTemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {['Enrolled', 'To-Do','Assignments','Attendance','Quiz','Community'].map((text, index) => (
+        {['Enrolled', 'Logout'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-              {getIcon(index+2)}
+              {getIcon(index+1)}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>

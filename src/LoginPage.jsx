@@ -28,7 +28,7 @@ export default function Login() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" >
         <CssBaseline />
         <Box
           sx={{
@@ -36,15 +36,19 @@ export default function Login() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            border:'solid thick #FC6736',
+            borderRadius: '2%',
+            opacity:'90%',
+            backgroundColor:'lavenderblush'
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 2, bgcolor: 'secondary.main', height:'60px',width:'60px' }}>
             
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h2" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 2, mr: 2, ml: 2 }}>
             <TextField
               margin="normal"
               required
@@ -65,14 +69,11 @@ export default function Login() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+            
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 3, height:'40px'}}>
               Sign In
             </Button>
-            <Grid container>
+            <Grid container sx={{mb:'30px'}}>
               <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?

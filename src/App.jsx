@@ -6,12 +6,17 @@ import Login from './LoginPage.jsx';
 import SignUp from './Signup.jsx';
 import Navbar from './components/Navbar.jsx';
 import SwipeableTemporaryDrawer from './components/Sidebar.jsx';
-import Attendance from './components/Attendance.jsx';
-import Assignment from './components/Assignment.jsx';
+import SAttendance from './components/SAttendance.jsx';
+import TAttendance from './components/TAttendance.jsx';
 import Community from './components/Community.jsx';
-import QuizSection from './components/Quiz.jsx';
 import Chatbot from './components/Chatbot.jsx';
 import Home from './components/Home.jsx';
+import TAssignment from './components/TAssignment.jsx';
+import SAssignment from './components/SAssignment.jsx';
+import AnnouncementSection from './components/Announcement.jsx';
+import InsideClass from './components/InsideClass.jsx';
+import JoinClass from './components/JoinClass.jsx';
+import CreateClass from './components/CreateClass.jsx';
 
 function App() {
   
@@ -26,12 +31,18 @@ function App() {
           <Route path="/landing" element={<Landing />} />        
           <Route path="/navbar" element={<Navbar />} />
           <Route path="/sidebar" element={<SwipeableTemporaryDrawer />} />
-          <Route path="/attendance" element={<Attendance />} />
-          <Route path="/assignment" element={<Assignment />} />
+          <Route path="/sattendance" element={<SAttendance />} />
+          <Route path="/tattendance" element={<TAttendance />} />
+          <Route path="/tassignment" element={<TAssignment />} />
+          <Route path="/sassignment" element={<SAssignment />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/quiz" element={<QuizSection />} />
           <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/announcement" element={<AnnouncementSection />} />
+          <Route path="/insideclass" element={<InsideClass />} />
+          <Route path="/joinclass" element={<JoinClass />} />
+          <Route path="/createclass" element={<CreateClass />} />
+
         </Routes>
       </Router>
       </div>

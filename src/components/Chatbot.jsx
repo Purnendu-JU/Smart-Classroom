@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Fab, TextField, Paper } from '@mui/material';
+import { Fab, TextField, Paper, AppBar, Toolbar, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import ThreePIcon from '@mui/icons-material/ThreeP';
-
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 const Chatbot = () => {
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
@@ -22,8 +22,8 @@ const Chatbot = () => {
     <>
       {!isOpen && (
         <Fab
-          color="primary"
-          style={{ position: 'fixed', bottom: '20px', right: '20px' }}
+          color="success"
+          style={{ position: 'fixed', bottom: '20px', right: '20px', color:'lightgreen' }}
           onClick={() => setIsOpen(true)}
         >
           <ThreePIcon />
@@ -52,6 +52,17 @@ const Chatbot = () => {
                 {chat.text}
               </div>
             ))}
+          </div>
+          <div style={{position:'absolute', top:'0px', width:'100%' }}>
+          <AppBar position='static'>
+              <Toolbar>
+              <SmartToyIcon sx={{ width: 30, height: 30, marginRight:'10px'}} />
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
+                  Chatbot
+                </Typography>
+                
+              </Toolbar>
+            </AppBar>
           </div>
           <div style={{ position: 'absolute', bottom: '10px', right: '10px', display: 'flex' }}>
             <TextField

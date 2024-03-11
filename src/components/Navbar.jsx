@@ -56,11 +56,11 @@ const Navbar = () => {
     <AppBar position="static">
       <Toolbar>
         
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu">
+        <IconButton size="large" edge="start" color="deepblue" aria-label="menu" >
           <MenuIcon />
         </IconButton>
-        <Avatar alt="Smart Classroom" src="./src/photos/sclogo.png" sx={{ width: 30, height: 30, marginRight:2 }} />
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Avatar alt="Smart Classroom" src="./src/photos/sclogo.png" sx={{ width: 33, height: 33, marginRight:2 }} />
+        <Typography variant="h4" component="div"  sx={{ flexGrow: 1 }}>
           Smart Classroom
         </Typography>
         <Button
@@ -69,7 +69,7 @@ const Navbar = () => {
           aria-haspopup="true"
           onClick={handleAddClick}
         >
-          <AddIcon />
+          <AddIcon sx={{width:30, height:30, color:"#222831"}}/>
         </Button>
         <Menu
           id="add-menu"
@@ -87,7 +87,7 @@ const Navbar = () => {
           aria-haspopup="true"
           onClick={handleAvatarClick}
         >
-          <Avatar {...stringAvatar('Purnendu Kumar Misra')} />
+          <Avatar {...stringAvatar('Purnendu Kumar Misra')} sx={{color:'#222831'}}/>
         </Button>
         <Menu
           id="avatar-menu"
@@ -96,7 +96,7 @@ const Navbar = () => {
           open={Boolean(avatarAnchorEl)}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+          <MenuItem onClick={handleLogout}>Edit Profile</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
