@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Typography, TextField, Button } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 
-const Attendance = () => {
+const SAttendance = () => {
   const [attendanceCode, setAttendanceCode] = useState('');
   const [isAttendanceMarked, setIsAttendanceMarked] = useState(false);
 
@@ -20,13 +20,13 @@ const Attendance = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h4" component="div" sx={{ mt: 2, mb: 4 }}>
+    <Container sx={{border:'solid thick #FC6736',mt:4, backgroundColor:'lavenderblush'}}>
+      <Typography variant="h2" component="div" sx={{ mt: 2, mb: 4 }}>
         Attendance
       </Typography>
       {isAttendanceMarked ? (
         <Typography variant="body1" sx={{ mb: 2 }}>
-          Attendance already marked for today.
+          Attendance marked for today.
         </Typography>
       ) : (
         <>
@@ -42,7 +42,7 @@ const Attendance = () => {
             variant="contained"
             color="primary"
             onClick={handleMarkAttendance}
-            sx={{ mt: 2 }}
+            sx={{ mt: 2 ,mb:4}}
             startIcon={<CheckIcon />}
           >
             Mark Attendance
@@ -53,5 +53,5 @@ const Attendance = () => {
   );
 };
 
-export default Attendance;
+export default SAttendance;
 
