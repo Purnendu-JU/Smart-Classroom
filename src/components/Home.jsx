@@ -17,8 +17,8 @@ const Home = () => {
       <Grid container spacing={3}>
         {classesData.map((classInfo) => (
           <Grid item key={classInfo.id} xs={12} sm={6} md={4} lg={3}>
-            <Card  sx={{border:'solid black',boxShadow: 5, backgroundColor:'greenyellow', borderRadius:'8%' }}>
-              <Avatar sx={{ width: 90, height: 90, margin: '0 auto',border: 'solid black',color:'hotpink', marginTop: 8 }}>{classInfo.teacherAvatar}</Avatar>
+            <Card  sx={{border:'solid black',boxShadow: 5, backgroundColor:'lavender', borderRadius:'8%' }}>
+              <Avatar sx={{ width: 90, height: 90, margin: '0 auto',border: 'solid black',color:'lavenderblush', marginTop: 8 }}></Avatar>
               <CardContent>
                 <Typography variant="h4" gutterBottom>
                   {classInfo.className}
